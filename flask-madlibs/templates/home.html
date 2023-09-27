@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+
+<h1 class="pt-4 mb-3 text-center">Madlibs Story!</h1>
+<h2 class="pt-4 mb-3 text-center">Choose a Story</h2>
+
+<select name="story-dropdown" id="story-dropdown">
+  {% for story in stories %}
+  <option value="{{story}}">{{story}}</option>
+  {% endfor %}
+</select>
+{% endblock %}
