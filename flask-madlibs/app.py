@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from flask_debugtoolbar import DebugToolbarExtension
 
-from stories import silly_story
+from stories import silly_story, excited_story
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "secret"
@@ -11,7 +11,7 @@ debug = DebugToolbarExtension(app)
 
 @app.get("/questions")
 def display_questions():
-    """displays question form on page"""
+    """Displays question form on page."""
 
     return render_template(
         "questions.html",
@@ -20,7 +20,7 @@ def display_questions():
 
 @app.get("/results")
 def show_result():
-    """show the result"""
+    """Show the story result."""
 
     result = silly_story.get_result_text(request.args)
 
