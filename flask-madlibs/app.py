@@ -17,3 +17,11 @@ def display_questions():
         "questions.html",
         words=silly_story.prompts
     )
+
+@app.get("/results")
+def show_result():
+    """show the result"""
+
+    result = silly_story.get_result_text(request.args)
+
+    return render_template('results.html', story=result)
