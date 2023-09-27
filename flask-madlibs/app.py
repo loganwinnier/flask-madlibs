@@ -9,6 +9,17 @@ app.config['SECRET_KEY'] = "secret"
 debug = DebugToolbarExtension(app)
 
 
+@app.get("/")
+def display_home_page():
+    """Displays homepage of template options"""
+    stories = {"Silly Story": silly_story, "Excited Story": excited_story}
+
+    return render_template(
+        "home.html",
+        stories=stories
+    )
+
+
 @app.get("/questions")
 def display_questions():
     """Displays question form on page."""
@@ -17,6 +28,7 @@ def display_questions():
         "questions.html",
         words=silly_story.prompts
     )
+
 
 @app.get("/results")
 def show_result():

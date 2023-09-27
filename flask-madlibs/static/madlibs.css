@@ -2,7 +2,10 @@ body {
     font-size: 150%;
 }
 
-body, h1, h2, button {
+body,
+h1,
+h2,
+button {
     font-family: 'Gochi Hand', cursive !important;
 }
 
@@ -19,6 +22,9 @@ div.container-fluid {
 }
 
 main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     border-radius: 25px;
     background-color: white;
     box-shadow: 8px 8px 13px #58A29D;
