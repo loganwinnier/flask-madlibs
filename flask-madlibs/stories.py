@@ -20,7 +20,7 @@ class Story:
 
     def __init__(self, words, text):
         """Create story with words and template text."""
-
+        # TODO:add two properties. title and unque code
         self.prompts = words
         self.template = text
 
